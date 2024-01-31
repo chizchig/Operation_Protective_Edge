@@ -1,0 +1,11 @@
+# Ignore Terraform .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Ignore Terraform .tfvars files which might contain sensitive data
+*.tfvars
+
+# Ignore all log files
+*.log
+
+**.DS_Store*
