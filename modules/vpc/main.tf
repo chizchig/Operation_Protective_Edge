@@ -18,7 +18,7 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-# Subnet Configuration
+# Subnet Configurations
 resource "aws_subnet" "subnets" {
   for_each = toset(local.generate_subnet_cidr_blocks)
 
