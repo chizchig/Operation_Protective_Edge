@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role 
+metadata:
+  name: deployment-role
+  namespace: beer-factory-namespace 
+rules:
+- apiGroups: ["app", "extensions"]
+  resources:  ["deployments","replicaset"]
+  verbs: ["get", "list", "watch", "create", "update", "rollback"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deployment-binding
+  namespace: beer-factory-namespace 
+subjects:
+- kind: User
+  name: development-team
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role 
+  name: deployment-role 
+  apiGroup: rbac.authorization.k8s.io
