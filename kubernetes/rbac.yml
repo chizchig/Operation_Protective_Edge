@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role 
 metadata:
   name: deployment-role
-  namespace: beer-factory-namespace 
+  namespace: eagle-namespace 
 rules:
 - apiGroups: ["app", "extensions"]
   resources:  ["deployments","replicaset"]
@@ -13,7 +13,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: deployment-binding
-  namespace: beer-factory-namespace 
+  namespace: eagle-namespace 
 subjects:
 - kind: User
   name: development-team
